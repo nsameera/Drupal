@@ -1,0 +1,75 @@
+<?php
+
+/**
+ * @file
+ * Creates a restaurants menu.
+ */
+
+ /**
+  * Implements hook_menu().
+  */
+function restaurants_menu() {
+  $items = array();
+  $items['restaurants'] = array(
+    'title' => 'Restaurant',
+    'description' => 'A form to display restaurant information.',
+    'page callback' => 'restaurants_page',
+    'access callback' => TRUE,
+  );
+  $items['Appetizer'] = array(
+    'title' => 'Appetizer',
+    'description' => 'A form to display Appetizers.',
+    'page callback' => 'restaurant_display',
+    'access callback' => TRUE,
+    'file' => 'restaurants_content.admin.inc',
+  );
+  $items['Main Course'] = array(
+    'title' => 'Main Course',
+    'description' => 'A form to display Maincourse.',
+    'page callback' => 'restaurant_main',
+    'access callback' => TRUE,
+    'file' => 'restaurants_content.admin.inc',
+  );
+  $items['Dessert'] = array(
+    'title' => 'Desserts',
+    'description' => 'A form to display Appetizers.',
+    'page callback' => 'restaurant_dessert',
+    'access callback' => TRUE,
+    'file' => 'restaurants_content.admin.inc',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function restaurants_page() {
+  $data = array();
+  $output = array('#theme' => 'restaurants_page');
+  return $output;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function restaurants_content() {
+  $data = array();
+  $output = array('#theme' => 'restaurants_content');
+  return $output;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function restaurants_theme($existing, $type, $theme, $path) {
+  return array(
+    'restaurants_page' => array(
+      'variables' => array('data' => NULL),
+      'template' => 'restaurants_page',
+    ),
+    'restaurants_content' => array(
+      'arguments' => array('data' => NULL),
+      'file' => 'restaurants_content.admin.inc',
+    ),
+  );
+}

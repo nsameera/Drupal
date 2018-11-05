@@ -1,0 +1,3 @@
+name = restaurants
+core = "7.x"
+description = "This is my Custom module."

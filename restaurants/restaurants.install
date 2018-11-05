@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Creates a table for Restaurant module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function restaurant_schema() {
+  $schema['restaurant_menu'] = array(
+    'description' => 'Displays the information about the available menu',
+    'fields' => array(
+      'menu_id' => array(
+        'description' => 'Displays the information about the menu id',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'menu_name' => array(
+        'description' => 'Displays the information about the menu name',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+      ),
+      'menu_description' => array(
+        'description' => 'Description about the each item',
+        'type' => 'text',
+        'not null' => TRUE,
+      ),
+      'menu_type' => array(
+        'description' => 'Displays the information about the available menu types',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+      ),
+      'menu_price' => array(
+        'description' => 'Displays the price of each item',
+        'type' => 'float',
+        'not null' => TRUE,
+      ),
+      'menu_img' => array(
+        'description' => 'Displays the menu images',
+        'type' => 'varchar',
+        'length' => '2',
+        'not null' => TRUE,
+      ),
+    ),
+  );
+  return $schema;
+
+}
