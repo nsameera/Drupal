@@ -1,0 +1,30 @@
+<?php
+function newmod_menu() {
+  $items = array();
+
+  $items['newmod'] = array( //this creates a URL that will call this form at "examples/form-example"
+    'title' => 'Show Time', //page title
+    'description' => 'A form to display time.',
+    'page callback' => 'html_php', //this is the function that will be called when the page is accessed.  for a form, use drupal_get_form
+    'access callback' => TRUE
+  );
+  return $items;
+}
+
+function html_php(){
+  $data=array();
+    drupal_add_js(drupal_get_path('module', 'newmod').'/script2.js', 'file' );
+    drupal_add_css(drupal_get_path('module', 'newmod').'/style.css' );
+    $output = array('#theme'=>'html_php');
+  return $output;
+}
+
+function newmod_theme($existing, $type, $theme, $path){
+  return array(
+    'html_php' => array(
+      'variables' => array('data' => NULL),
+   'template' => 'html_php',
+ ),
+ );
+}
+?>
