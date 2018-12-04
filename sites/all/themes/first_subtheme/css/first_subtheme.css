@@ -1,0 +1,60 @@
+/*
+This is the css file that will contain all the custom css styles that you will be writing to customize the look of the Apigee developer portal
+*/
+#navbar{
+  background-color: green;
+}
+.top_header{
+  margin-left: 35px;
+}
+.welcome{
+  color: green;
+}
+.bottom_header h2{
+  text-align: left;
+  margin-left: 35px;
+  color: green;
+}
+
+.col-md-10{
+  margin-left: 50px;
+}
+
+.block p{
+  background-color: lightgreen;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 35px;
+  margin-right: 675px;
+  text-align: left;
+  width: 100%;
+}
+.block1 p{
+  background-color: lightgreen;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 35px;
+  margin-right: 675px;
+  text-align: left;
+  width: 100%;
+}
+
+.block2 p{
+  background-color: lightgreen;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 35px;
+  margin-right: 675px;
+  text-align: left;
+  width: 100%;
+}
+.block3 p{
+  background-color: lightgreen;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 35px;
+  margin-right: 675px;
+  text-align: left;
+  width: 100%;
+}
+

@@ -1,0 +1,16 @@
+.views-exposed-form .views-exposed-widget .form-submit{
+  background-color: orange;
+}
+.view-content {
+     padding: 20px;
+}
+h3 {
+    background-color: lightskyblue;
+    margin-right: 900px;
+    width: 392px;
+    text-align: center;
+}
+.views-field.views-field-title {
+    background-color: lightsteelblue;
+    padding-right: 145px;
+}
