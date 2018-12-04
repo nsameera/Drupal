@@ -1,0 +1,106 @@
+<?php
+
+/**
+ * @file
+ * This is for implementing hooks and functions for this module.
+ */
+
+use Apigee\ManagementAPI\Company;
+
+/**
+ * Implements hook_menu().
+ */
+function apigee_company_details_menu() {
+  $items['apigee_company_details'] = array(
+    'title' => 'Apigee Company Details',
+    'description' => 'Displaying simple hello world page',
+    'page callback' => 'hello_page',
+    'access callback' => TRUE,
+  );
+  $items['apigee_addpage'] = array(
+    'title' => 'Apigee Company Details',
+    'description' => 'Displaying company page',
+    'page callback' => 'apigee_addpage',
+    'access callback' => TRUE,
+  );
+  $items['apigee_addpagetwo'] = array(
+    'title' => 'Apigee Company Details',
+    'description' => 'Displaying second company page',
+    'page callback' => 'apigee_addpagetwo',
+    'access callback' => TRUE,
+  );
+  $items['apigee_addpagethree'] = array(
+    'title' => 'Apigee Company Details',
+    'description' => 'Displaying third company page',
+    'page callback' => 'apigee_addpagethree',
+    'access callback' => TRUE,
+  );
+  $items['apigee_addpagefour'] = array(
+    'title' => 'Apigee Company Details',
+    'description' => 'Displaying fourth company page',
+    'page callback' => 'apigee_addpagefour',
+    'access callback' => TRUE,
+  );
+  return $items;
+}
+
+/**
+ * Page callback function for  hello_page.
+ *
+ * @return string
+ *   returning a markup string.
+ */
+
+function hello_page(){
+  $config = devconnect_default_org_config();
+  krumo($config);
+  $company = new Company($config);
+  $details = $company->listCompanies();
+  krumo($details);
+  return "hi";
+}
+
+
+function apigee_addpage(){
+  $company_values = array(
+    'name' => "sameera",
+    'displayName' => 'sameera',
+  );
+  $company_machine_name = $company_values['name'];
+  $company_entity = entity_create('apigee_company', $company_values);
+  $saved = entity_save('apigee_company', $company_entity);
+  return "this is my first company";
+}
+function apigee_addpagetwo(){
+  $company_values = array(
+    'name' => "raja",
+    'displayName' => 'raja',
+  );
+  $company_machine_name = $company_values['name'];
+  $company_entity = entity_create('apigee_company', $company_values);
+  $saved = entity_save('apigee_company', $company_entity);
+  return "this is my second company";
+
+}
+function apigee_addpagethree(){
+  $company_values = array(
+    'name' => "smaran",
+    'displayName' => 'smaran',
+  );
+  $company_machine_name = $company_values['name'];
+  $company_entity = entity_create('apigee_company', $company_values);
+  $saved = entity_save('apigee_company', $company_entity);
+  return "this is my third company";
+
+}
+function apigee_addpagefour(){
+  $company_values = array(
+    'name' => "krishna",
+    'displayName' => 'krishna',
+  );
+  $company_machine_name = $company_values['name'];
+  $company_entity = entity_create('apigee_company', $company_values);
+  $saved = entity_save('apigee_company', $company_entity);
+  return "this is my fourth company";
+
+}
